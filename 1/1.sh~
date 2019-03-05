@@ -1,0 +1,11 @@
+maxlineas=`cat nombres.txt | wc -l`
+linea=1
+while [ $linea -le $maxlineas ];do
+    nombre=`cat nombres.txt | head -${linea} | tail -1`
+    mkdir $nombre
+    contador=1
+    while [ $contador -le $1 ];do
+	mkdir $nombre/personal$contador
+	contador=$(($contador+1))
+    done
+done
